@@ -1,0 +1,17 @@
+{
+  "name": "forms_front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fluentui/react": "^7.121.4",
+    "immutable": "^4.0.0-rc.12",
+    "next": "9.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}
