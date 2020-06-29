@@ -1,0 +1,90 @@
+{
+  "creator": "{uuid}",
+  "time": "{time}",
+  "title": "{title}",
+  "form": [
+    {
+      "//": "form define"
+    },
+    {
+      "key": 1,
+      "require": true,
+      "type": "int",
+      "ask": "a?",
+      "limit": {
+        "max": 100,
+        "min": 0
+      }
+    },
+    {
+      "key": 2,
+      "type": "short_text",
+      "require": true,
+      "ask": "b?",
+      "limit": {
+        "maxlength": 20
+      }
+    },
+    {
+      "key": 4,
+      "type": "text",
+      "require": true,
+      "ask": "c?",
+      "limit": {
+        "maxlength": 200
+      }
+    },
+    {
+      "key": 4,
+      "type": "choice",
+      "require": true,
+      "ask": "aa?",
+      "choices": [
+        {
+          "v": "a"
+        },
+        {
+          "v": "b"
+        },
+        {
+          "v": "c"
+        },
+        {
+          "v": "f"
+        },
+        {
+          "k": "g",
+          "v": "else"
+        }
+      ]
+    },
+    {
+      "key": 4,
+      "type": "multi_choice",
+      "require": false,
+      "ask": "ee?",
+      "choices": [
+        {
+          "k": "cs",
+          "v": "abc"
+        },
+        {
+          "k": "ac",
+          "v": "nnn"
+        },
+        {
+          "k": "ea",
+          "v": "sss"
+        },
+        {
+          "k": "sf",
+          "v": "fff"
+        }
+      ],
+      "limit": {
+        "max": 3,
+        "min": 1
+      }
+    }
+  ]
+}

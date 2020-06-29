@@ -1,0 +1,10 @@
+{
+  "name": "{name}",
+  "_id": "{id}",
+  "email": "{email}",
+  "level": 1,
+  "secret": "{hash}${salt}",
+  "forms": [
+    "{forms_define_id}"
+  ]
+}
