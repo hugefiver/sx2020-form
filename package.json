@@ -1,0 +1,36 @@
+{
+  "name": "forms_front",
+  "version": "0.1.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugefiver/sx2020-form"
+  },
+  "scripts": {
+    "dev": "parcel serve --open -p 8081 --host 127.0.0.1 ./index.html",
+    "start": "parcel serve -p 8081 --host 127.0.0.1 ./index.html",
+    "build": "parcel build -o ./dist ./index.html ",
+    "clean": "rm -rf ./dist/*"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-helmet": "^6.0.0",
+    "@types/react-router": "^5.1.8",
+    "@types/react-router-dom": "^5.1.5",
+    "babel": "^6.23.0",
+    "eslint": "^7.3.1",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "@fluentui/react": "^7.121.6",
+    "axios": "^0.19.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "typescript": "^3.9.5"
+  }
+}
