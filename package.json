@@ -29,9 +29,6 @@
     "tslint": "^6.1.2"
   },
   "dependencies": {
-    "@fluentui/react": "^7.121.6",
-    "@uifabric/fluent-theme": "^7.1.103",
-    "@uifabric/react-hooks": "^7.4.11",
     "axios": "^0.19.2",
     "path-browserify": "^1.0.1",
     "react": "^16.13.1",
