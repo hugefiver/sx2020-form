@@ -3,11 +3,17 @@ from flask_jwt_extended import *
 from bson import ObjectId
 from datetime import datetime as dt
 
+from apis.user import new_user
 from models.database import db
 from apis.utils import resp_data, make_json
 from models.user import User
 
 auth = Blueprint('auth', __name__)
+
+
+@auth.route('/register', methods=['POST'])
+def register():
+    return new_user()
 
 
 @auth.route('/login', methods=['POST'], strict_slashes=False)

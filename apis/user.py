@@ -23,6 +23,10 @@ def get_user(user_id: str):
 
 @user.route('/', methods=['POST'], strict_slashes=False)
 def new_user():
+    return new_user_fun()
+
+
+def new_user_fun():
     cl = db().get_collection('users')
     data = request.get_json()
 
