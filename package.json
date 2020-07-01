@@ -29,6 +29,7 @@
     "tslint": "^6.1.2"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "axios": "^0.19.2",
     "path-browserify": "^1.0.1",
     "react": "^16.13.1",
