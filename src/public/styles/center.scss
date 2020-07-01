@@ -1,0 +1,11 @@
+.horizontal-center {
+  text-align: center;
+  & > * {
+    text-align: left;
+  }
+}
+
+.vertical-center {
+  display: table;
+  vertical-align: middle;
+}

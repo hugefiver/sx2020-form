@@ -1,0 +1,26 @@
+@mixin no-lrtb {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.background {
+  @include no-lrtb;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(../img/background.webp);
+
+  &:after {
+    @include no-lrtb;
+    position: absolute;
+    content: " ";
+    filter: blur(5px);
+    color: aqua;
+    opacity: 0.8;
+  }
+}
+

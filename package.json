@@ -6,31 +6,40 @@
     "type": "git",
     "url": "https://github.com/hugefiver/sx2020-form"
   },
+  "license": "MIT",
   "scripts": {
-    "dev": "parcel serve --open -p 8081 --host 127.0.0.1 ./index.html",
-    "start": "parcel serve -p 8081 --host 127.0.0.1 ./index.html",
-    "build": "parcel build -o ./dist ./index.html ",
+    "dev": "parcel serve --open -p 8081 --host 127.0.0.1 --out-dir ./dist ./index.html",
+    "start": "parcel serve -p 8081 --host 127.0.0.1 --out-dir ./dist ./index.html",
+    "build": "cross-env NODE_ENV=production parcel build --out-dir ./dist ./index.html",
     "clean": "rm -rf ./dist/*"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/node": "^14.0.14",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.0.0",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
-    "babel": "^6.23.0",
+    "@types/sass": "^1.16.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.3.1",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.9",
+    "tslint": "^6.1.2"
   },
   "dependencies": {
     "@fluentui/react": "^7.121.6",
+    "@uifabric/fluent-theme": "^7.1.103",
+    "@uifabric/react-hooks": "^7.4.11",
     "axios": "^0.19.2",
+    "path-browserify": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "scss": "^0.2.4",
     "typescript": "^3.9.5"
   }
 }
