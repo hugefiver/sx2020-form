@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 
 from common import init_jwt
 from config import APP_NAME, SESSION_SECRET_KEY, ROOT_PATH
@@ -11,6 +12,9 @@ from apis.login import auth
 
 # create app
 app = Flask(APP_NAME)
+
+# CORS
+CORS(app)
 
 # jwt
 app.config['JWT_SECRET_KEY'] = JWT_SECRET_KEY
