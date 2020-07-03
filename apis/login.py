@@ -42,7 +42,11 @@ def login():
                                           'id': u['id'],
                                           'level': u['level']})
     return resp_data(0, msg='login successfully',
-                     data={'token': token})
+                     data={'token': token,
+                           'user': {'name': u['name'],
+                                    'id': u['id'],
+                                    'level': u['level']}
+                           })
 
 
 @auth.route('/check')
