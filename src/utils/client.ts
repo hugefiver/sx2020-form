@@ -13,7 +13,7 @@ const client = axios.create({baseURL: apis.base_url});
 
 export const authHeader = (tk: string | null | undefined) => {
     const token = tk || localStorage.getItem('token');
-    return token ? `Bearer ${token}` : '';
+    return token ? {Authorization: `Bearer ${token}`} : {};
 }
 
 export default client
