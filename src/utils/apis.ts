@@ -10,3 +10,8 @@ export const login = '/auth/login'
 export const register = '/auth/register'
 export const check = '/auth/check'
 export const info = '/auth/info'
+
+// Form
+export const form = '/form'
+export const formWithID = (id: string) => `/form/${id}`
+

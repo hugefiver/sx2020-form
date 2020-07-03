@@ -9,6 +9,8 @@ import * as paths from './utils/paths';
 import Index from './pages';
 import Register from './pages/register';
 import Login from './pages/login';
+import FormDesign from './pages/form-design';
+import {FormResponse} from './pages/form-response';
 
 export const App = () => {
     const theme = createMuiTheme({
@@ -29,6 +31,12 @@ export const App = () => {
                     </Route>
                     <Route exact path={paths.login}>
                         <Login />
+                    </Route>
+                    <Route exact path={paths.form_design}>
+                        <FormDesign />
+                    </Route>
+                    <Route exact path={paths.form_response('1')} >
+                        <FormResponse />
                     </Route>
                 </Switch>
             </Router>

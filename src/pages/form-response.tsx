@@ -1,20 +1,19 @@
-import React, {useState} from 'react';
+import {Background} from '../components/background';
 import {
     Button,
     CardContent,
+    FormControl,
+    FormControlLabel,
     Grid,
+    Radio,
     RadioGroup,
     TextField,
-    Typography,
-    FormControl,
-    FormControlLabel, Radio
+    Typography
 } from '@material-ui/core';
-import {useHistory} from 'react-router';
-
-import {Background} from '../components/background';
 import MiddleCard from '../components/middle-card';
-import * as paths from '../utils/paths';
+import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/styles';
+import {useHistory} from 'react-router';
 
 const useStyle = makeStyles({
     title: {
@@ -25,13 +24,13 @@ const useStyle = makeStyles({
         fontSize: 'large'
     },
     sm: {
-        padding: '2px 20px'
+        padding: '5px 20px'
     }
 });
 
-export const FormDesign = () => {
-    const router = useHistory()
+export const FormResponse = () => {
     const s = useStyle();
+    const router = useHistory();
 
     let [v1, setV1] = useState<String>('');
 
@@ -43,7 +42,8 @@ export const FormDesign = () => {
                     <MiddleCard maxWidth={'md'} fullScreen={false}>
                         <CardContent>
                             <Grid justify={'center'} container>
-                                <Typography className={s.title} component={'span'}> 关于关于关于关于明天几点吃饭的问卷的问卷的问卷的问卷 </Typography>
+                                <TextField value={v1} label={'问卷标题'}
+                                           onChange={(e) => setV1(e.target.value)} />
                             </Grid>
                         </CardContent>
                     </MiddleCard>
@@ -60,12 +60,10 @@ export const FormDesign = () => {
                         <CardContent className={s.sm}>
                             <Grid justify={'flex-start'} container style={{padding: 20}} >
                                 <FormControl >
-                                    <RadioGroup value={'v1'} onChange={(e) => setV1(e.target.value)}>
-                                        <FormControlLabel label={'A. 答案 1'} control={<Radio />} value={'A'} />
-                                        <FormControlLabel label={'B. 答案 2'} control={<Radio />} value={'B'} />
-                                        <FormControlLabel label={'C. 答案 3'} control={<Radio />} value={'C'} />
-                                        <FormControlLabel label={'D. 答案 4'} control={<Radio />} value={'D'} />
-                                    </RadioGroup>
+                                        <FormControlLabel value={'A'} control={<TextField />} />
+                                        <FormControlLabel value={'B'} control={<TextField />} />
+                                        <FormControlLabel value={'C'} control={<TextField />} />
+                                        <FormControlLabel value={'D'} control={<TextField />} />
                                 </FormControl>
                             </Grid>
                         </CardContent>
@@ -86,5 +84,3 @@ export const FormDesign = () => {
         </>
     )
 }
-
-export default FormDesign

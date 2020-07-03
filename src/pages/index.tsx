@@ -20,8 +20,10 @@ export function Index() {
     let [isLogged, setLogged] = useState<boolean>(false);
 
     useEffect(() => {
+        if (!token) return;
+
         client.get(apis.check, {
-            headers: {...authHeader()}
+            headers: {...authHeader(token)}
         }).then(({data}) => {
             if (respOk(data as Resp)) {
                 const user = data.data.user;
@@ -56,6 +58,18 @@ export function Index() {
                         <span style={{padding: '0 10px'}}> 退出登录 </span>
                     </Button> : <></>
                 }
+            </div>
+            <div>
+                <Button color={'inherit'} variant={'contained'}
+                        style={{margin: 20}}
+                        onClick={() => router.push(paths.form_design)}>
+                    <span style={{padding: '0 10px'}}> 创建表单 </span>
+                </Button>
+                <Button color={'inherit'} variant={'contained'}
+                        style={{margin: 20}}
+                        onClick={() => router.push(paths.form_response('1'))}>
+                    <span style={{padding: '0 10px'}}> 填写表单 </span>
+                </Button>
             </div>
         </>
     )
