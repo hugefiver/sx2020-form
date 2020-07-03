@@ -8,3 +8,5 @@ export const get_api = (path: string): string => path_join(base_url, path)
 // Auth
 export const login = '/auth/login'
 export const register = '/auth/register'
+export const check = '/auth/check'
+export const info = '/auth/info'

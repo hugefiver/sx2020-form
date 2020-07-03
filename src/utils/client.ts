@@ -11,9 +11,9 @@ export const respOk = (d: Resp): boolean => d.status >= 0;
 
 const client = axios.create({baseURL: apis.base_url});
 
-export const authHeader = () => {
-    const token = localStorage.getItem('token');
-    return token ? {token: `Bearer $token`} : {};
+export const authHeader = (tk: string | null | undefined) => {
+    const token = tk || localStorage.getItem('token');
+    return token ? `Bearer ${token}` : '';
 }
 
 export default client

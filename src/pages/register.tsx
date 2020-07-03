@@ -81,8 +81,29 @@ export const Register = () => {
     let [secret, setSecret] = useState<string>('');
     let [clicked, setClicked] = useState<Set<string>>(Set<string>())
 
+
+    const okName = clicked.has('name') ? checkName(name) : ok();
+    const okEmail = clicked.has('email') ? checkEmail(email) : ok();
+    const okPassword = clicked.has('password') ? checkPassword(secret) : ok();
+
+    const router = useHistory();
+
     const do_register = () => {
-        const data = {name, email, secret,}
+        const data = {name, email, secret,};
+        const checks = [checkName(name), checkEmail(email), checkPassword(secret)];
+
+        for (const i of checks) {
+            if (isOk(i)) {
+                continue
+            }
+            sa.fire(
+                '错误',
+                '输入有误哦',
+                'error'
+            ).finally()
+            return
+        }
+
         client.post(apis.register, data)
             .then(({data}) => {
                 if (respOk(data as Resp)){
@@ -102,12 +123,6 @@ export const Register = () => {
                 }
             })
     }
-
-    const okName = clicked.has('name') ? checkName(name) : ok();
-    const okEmail = clicked.has('email') ? checkEmail(email) : ok();
-    const okPassword = clicked.has('password') ? checkPassword(secret) : ok();
-
-    const router = useHistory();
 
     return (
         <>
