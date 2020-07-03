@@ -13,6 +13,7 @@
   margin: 0;
   padding: 0;
   background-image: url(../img/background.webp);
+  //z-index: -1;
 
   &:after {
     @include no-lrtb;

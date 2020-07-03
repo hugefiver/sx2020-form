@@ -9,7 +9,6 @@ type BgProps = {
 export const Background = ({url}: BgProps) => {
     return (
         <div className={'background'} style={url ? {backgroundImage: `url(${url})`} : {}}>
-
         </div>
     )
 }
