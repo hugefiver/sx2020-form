@@ -11,7 +11,7 @@ export const respOk = (d: Resp): boolean => d.status >= 0;
 
 const client = axios.create({baseURL: apis.base_url});
 
-export const authHeader = (tk: string | null | undefined) => {
+export const authHeader = (tk?: string) => {
     const token = tk || localStorage.getItem('token');
     return token ? {Authorization: `Bearer ${token}`} : {};
 }
