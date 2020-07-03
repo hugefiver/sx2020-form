@@ -21,7 +21,7 @@ export function Index() {
 
     useEffect(() => {
         client.get(apis.check, {
-            headers: {...authHeader(token)}
+            headers: {...authHeader()}
         }).then(({data}) => {
             if (respOk(data as Resp)) {
                 const user = data.data.user;

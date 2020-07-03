@@ -36,7 +36,7 @@ export const Login = () => {
         if (!token) return;
         client.get(apis.check, {
             headers: {
-                Authorization: `Bearer ${token}`
+                ...authHeader()
             }
         }).then(({data}) => {
             if (respOk(data as Resp)) {
